@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+body {
+  background-color: #6E85B2;
+  margin: auto 150px;
+  border: 1px solid black;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+    &:hover{
+      text-decoration: none;
+      color: whitesmoke;
+    }
+}
