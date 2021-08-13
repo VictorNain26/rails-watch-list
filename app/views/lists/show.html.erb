@@ -1,6 +1,20 @@
-<%= @list.name %>
-    <% @lists.each do |list| %>
-        <%= @list.movies.title %>
-    <% end %>
-<br>
-<%= link_to 'New Bookmark', new_list_bookmark_path(@list) %>
+<div class="banner" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><%= @list.name %> Movies</h1>
+    <p id="banner-typed-movies"></p>
+  </div>
+</div>
+<p class="bottom-book"><%= link_to 'New Bookmark', new_list_bookmark_path(@list) %></p>
+<div class="container-card">
+  <% @list.movies.each do |movie| %>
+    <div class="card-trip">
+      <img src="https://source.unsplash.com/random" />
+      <div class="card-trip-infos">
+        <div>
+          <h2 class="movie" data-title="<%= movie.title %>" ><%= movie.title %></h2>
+          <P><%= movie.overview %></P>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

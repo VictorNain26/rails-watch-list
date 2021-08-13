@@ -16,8 +16,14 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import { loadDynamicBannerText } from '../components/banner';
+import { loadDynamicBannerLists } from '../components/banner';
+import { loadDynamicBannerMovies } from '../components/banner-movies';
+
 
 document.addEventListener('turbolinks:load', () => {
-  loadDynamicBannerText();
+  loadDynamicBannerLists();
+});
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerMovies();
 });
