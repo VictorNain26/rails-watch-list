@@ -1,4 +1,6 @@
-  <strong>Name:</strong>
 <%= @list.name %>
+    <% @lists.each do |list| %>
+        <%= @list.movies.title %>
+    <% end %>
 <br>
 <%= link_to 'New Bookmark', new_list_bookmark_path(@list) %>
