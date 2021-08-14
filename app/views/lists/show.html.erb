@@ -5,6 +5,7 @@
   </div>
 </div>
 <p class="bottom-book"><%= link_to 'New Bookmark', new_list_bookmark_path(@list) %></p>
+<p class="bottom-book"><%= link_to 'Delete this List', @list, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <div class="container-card">
   <% @list.movies.each do |movie| %>
     <div class="card-trip">

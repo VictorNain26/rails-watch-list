@@ -1,8 +1,13 @@
 import Typed from 'typed.js';
 
 const loadDynamicBannerLists = () => {
+  const lists = document.querySelectorAll('.lists');
+  const array = [];
+  for (const list of lists) {
+    array.push(list.dataset.list);
+  }
   new Typed('#banner-typed-lists', {
-    strings: ["Science Fiction^1000", "Comédie^1000", "Drame^1000", "Action^1000", "Thriller^1000", "Horreur^1000", "Fantasy^1000"],
+    strings: array,
     typeSpeed: 90,
     backSpeed: 90,
     showCursor: false,
@@ -10,4 +15,6 @@ const loadDynamicBannerLists = () => {
   });
 }
 
-export { loadDynamicBannerLists };
+export {
+  loadDynamicBannerLists
+};
