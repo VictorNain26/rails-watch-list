@@ -4,16 +4,22 @@
     <p id="banner-typed-movies"></p>
   </div>
 </div>
-<p class="bottom-book"><%= link_to 'New Bookmark', new_list_bookmark_path(@list) %></p>
 <p class="bottom-book"><%= link_to 'Delete this List', @list, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<h3>New Bookmark</h3>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.submit %>
+<% end %>
 <div class="container-card">
-  <% @list.movies.each do |movie| %>
+  <% @list.bookmarks.each do |bookmark| %>
     <div class="card-trip">
       <img src="https://source.unsplash.com/random" />
       <div class="card-trip-infos">
         <div>
-          <h2 class="movie" data-title="<%= movie.title %>" ><%= movie.title %></h2>
-          <P><%= movie.overview %></P>
+          <h2 class="movie" data-title="<%= bookmark.movie.title %>" ><%= bookmark.movie.title %></h2>
+          <P><%= bookmark.movie.overview %></P>
+          <p><%= link_to 'delete this movie', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure ?' } %></p>
         </div>
       </div>
     </div>
